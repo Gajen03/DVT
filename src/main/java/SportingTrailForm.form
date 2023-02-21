@@ -74,7 +74,7 @@
                                           </Group>
                                           <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="EmailField" max="32767" attributes="0"/>
+                                              <Component id="emailField" max="32767" attributes="0"/>
                                               <Component id="passwordField" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -171,7 +171,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="EmailField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="emailField" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="Emailerror" min="-2" pref="18" max="-2" attributes="0"/>
@@ -302,7 +302,7 @@
             <Property name="text" type="java.lang.String" value="Have you been at a football club before?"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="EmailField">
+        <Component class="javax.swing.JTextField" name="emailField">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="66" red="0" type="rgb"/>
@@ -316,7 +316,7 @@
             <Property name="text" type="java.lang.String" value=" "/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EmailFieldActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="emailFieldActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">

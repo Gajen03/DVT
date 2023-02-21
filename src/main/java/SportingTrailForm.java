@@ -33,7 +33,7 @@ public class SportingTrailForm extends javax.swing.JFrame {
         yesBox = new javax.swing.JCheckBox();
         noBox = new javax.swing.JCheckBox();
         jLabel3 = new javax.swing.JLabel();
-        EmailField = new javax.swing.JTextField();
+        emailField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         passwordField = new javax.swing.JTextField();
@@ -113,13 +113,13 @@ public class SportingTrailForm extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Have you been at a football club before?");
 
-        EmailField.setBackground(new java.awt.Color(0, 102, 0));
-        EmailField.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        EmailField.setForeground(new java.awt.Color(255, 255, 255));
-        EmailField.setText(" ");
-        EmailField.addActionListener(new java.awt.event.ActionListener() {
+        emailField.setBackground(new java.awt.Color(0, 102, 0));
+        emailField.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        emailField.setForeground(new java.awt.Color(255, 255, 255));
+        emailField.setText(" ");
+        emailField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EmailFieldActionPerformed(evt);
+                emailFieldActionPerformed(evt);
             }
         });
 
@@ -232,7 +232,7 @@ public class SportingTrailForm extends javax.swing.JFrame {
                                             .addComponent(jLabel5))
                                         .addGap(79, 79, 79)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(EmailField)
+                                            .addComponent(emailField)
                                             .addComponent(passwordField))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -306,7 +306,7 @@ public class SportingTrailForm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(EmailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel4))
                     .addComponent(Emailerror, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
@@ -346,9 +346,9 @@ public class SportingTrailForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_yesBoxActionPerformed
 
-    private void EmailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailFieldActionPerformed
+    private void emailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_EmailFieldActionPerformed
+    }//GEN-LAST:event_emailFieldActionPerformed
 
     private void NameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameFieldActionPerformed
         // TODO add your handling code here:
@@ -369,7 +369,7 @@ public class SportingTrailForm extends javax.swing.JFrame {
         String id = IDField.getText();
         String date = DOBField.getText();
         String height = HieghtField.getText();
-        String email = EmailField.getText();
+        String email = emailField.getText();
         String password = passwordField.getText();
         
         if(fullname.isBlank()){
@@ -377,20 +377,33 @@ public class SportingTrailForm extends javax.swing.JFrame {
         }else{
             fullnameerror1.setText("");
         }
+        
         if(id.isBlank()){
             IDerror.setText("Please Fill in ID");
         }else{
             IDerror.setText("");
         }
+        
         if(date.isBlank()){
             DOBerror.setText("Please Fill in Date of Birthd");
         }else{
             DOBerror.setText("");
         }
+        
         if(height.isBlank()){
             Heighterror.setText("Please Fill in Height");
         }else{
             Heighterror.setText("");
+        }
+        if(email.isBlank()){
+            Emailerror.setText("Please Fill in Email");
+        }else{
+            Emailerror.setText("");
+        }
+        if(password.isBlank()){
+            Passworderror.setText("Please Fill in Password");
+        }else{
+            Passworderror.setText("");
         }
         
         
@@ -443,7 +456,6 @@ public class SportingTrailForm extends javax.swing.JFrame {
     private javax.swing.JLabel Booleanerror;
     private javax.swing.JTextField DOBField;
     private javax.swing.JLabel DOBerror;
-    private javax.swing.JTextField EmailField;
     private javax.swing.JLabel Emailerror;
     private javax.swing.JLabel Heighterror;
     private javax.swing.JTextField HieghtField;
@@ -451,6 +463,7 @@ public class SportingTrailForm extends javax.swing.JFrame {
     private javax.swing.JLabel IDerror;
     private javax.swing.JTextField NameField;
     private javax.swing.JLabel Passworderror;
+    private javax.swing.JTextField emailField;
     private javax.swing.JLabel fullnameerror1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
