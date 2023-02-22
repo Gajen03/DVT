@@ -174,7 +174,7 @@ public class SportingTrailForm extends javax.swing.JFrame {
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Hieght");
+        jLabel8.setText("Height");
 
         HieghtField.setBackground(new java.awt.Color(0, 102, 0));
         HieghtField.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
@@ -240,9 +240,6 @@ public class SportingTrailForm extends javax.swing.JFrame {
                                     .addComponent(Passworderror, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Booleanerror, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(118, 118, 118)
-                                .addComponent(jLabel7))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
                                     .addComponent(jLabel2))
@@ -252,12 +249,13 @@ public class SportingTrailForm extends javax.swing.JFrame {
                                         .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel6))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(IDField, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel8))
-                                    .addComponent(IDerror, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(fullnameerror1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(fullnameerror1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(IDerror, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                            .addComponent(IDField, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(jLabel8))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(HieghtField, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -266,7 +264,11 @@ public class SportingTrailForm extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Heighterror, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(DOBerror, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))))
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(118, 118, 118)
+                        .addComponent(jLabel7)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,12 +280,13 @@ public class SportingTrailForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(fullnameerror1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel6)
-                    .addComponent(DOBField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DOBerror, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(DOBerror, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1)
+                        .addComponent(jLabel6)
+                        .addComponent(DOBField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(IDerror, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
@@ -371,48 +374,87 @@ public class SportingTrailForm extends javax.swing.JFrame {
         String height = HieghtField.getText();
         String email = emailField.getText();
         String password = passwordField.getText();
+       
         
-        if(fullname.isBlank()){
+        
+       
+        // IS BLANKS(CHECK 1)
+        if (fullname.isBlank()) {
             fullnameerror1.setText("Please Fill in FullName");
-        }else{
+        } else {
             fullnameerror1.setText("");
         }
+        for (int i = 0; i < fullname.length(); i++) {
+             if(Character.isDigit(fullname.charAt(i))){
+                 fullnameerror1.setText("Name inculde numbers");
+             }else{
+                 fullnameerror1.setText("");
+             }
+        }
         
-        if(id.isBlank()){
+
+        if (id.isBlank()) {
             IDerror.setText("Please Fill in ID");
-        }else{
+        } else {
             IDerror.setText("");
         }
+        for (int i = 0; i < id.length(); i++) {
+             if(!Character.isDigit(id.charAt(i))){
+                 IDerror.setText("ID inncorrect");
+             }else{
+                 IDerror.setText("");
+             }
+        }
         
-        if(date.isBlank()){
+        
+        
+        
+
+        if (date.isBlank()) {
             DOBerror.setText("Please Fill in Date of Birthd");
-        }else{
+        } else {
             DOBerror.setText("");
         }
+
         
-        if(height.isBlank()){
+        
+        
+        if (height.isBlank()) {
             Heighterror.setText("Please Fill in Height");
-        }else{
+        } else {
             Heighterror.setText("");
         }
-        if(email.isBlank()){
+        
+        
+
+        if (email.isBlank()) {
             Emailerror.setText("Please Fill in Email");
-        }else{
+        } else {
             Emailerror.setText("");
         }
-        if(password.isBlank()){
+        if(!(email.contains("@") && email.contains(".com"))){
+            Emailerror.setText("Please enter valid email address");
+        }
+        
+        
+
+        if (password.isBlank()) {
             Passworderror.setText("Please Fill in Password");
-        }else{
+        } else {
             Passworderror.setText("");
         }
         
         
-        // figure out how to work with chack boxes
+        
+        
+        
+        
+        
+        
+        
         
 
-
-
-
+        // figure out how to work with chack boxes
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
