@@ -52,6 +52,7 @@ public class SportingTrailForm extends javax.swing.JFrame {
         IDerror = new javax.swing.JLabel();
         Passworderror = new javax.swing.JLabel();
         Booleanerror = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -151,7 +152,7 @@ public class SportingTrailForm extends javax.swing.JFrame {
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Date of Birth:");
+        jLabel6.setText("Date of Birth(day/month/year):");
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -174,7 +175,7 @@ public class SportingTrailForm extends javax.swing.JFrame {
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Height");
+        jLabel8.setText("Height(centimeters)");
 
         HieghtField.setBackground(new java.awt.Color(0, 102, 0));
         HieghtField.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
@@ -202,6 +203,11 @@ public class SportingTrailForm extends javax.swing.JFrame {
         Passworderror.setForeground(new java.awt.Color(204, 0, 0));
 
         Booleanerror.setForeground(new java.awt.Color(204, 0, 0));
+
+        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel9.setFont(new java.awt.Font("Dialog", 0, 8)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("Password must have 5 letters and 4 numbers");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -263,12 +269,15 @@ public class SportingTrailForm extends javax.swing.JFrame {
                                 .addGap(4, 4, 4)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Heighterror, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(DOBerror, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))))
+                                    .addComponent(DOBerror, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(118, 118, 118)
                         .addComponent(jLabel7)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -277,7 +286,7 @@ public class SportingTrailForm extends javax.swing.JFrame {
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addComponent(fullnameerror1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -314,12 +323,16 @@ public class SportingTrailForm extends javax.swing.JFrame {
                     .addComponent(Emailerror, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel5)
-                        .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Passworderror, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addComponent(jButton1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Passworderror, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(67, 67, 67)
+                        .addComponent(jButton1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(26, 26, 26))
         );
 
@@ -367,6 +380,12 @@ public class SportingTrailForm extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
+        boolean fullnameCheck = false;
+        boolean idCheck = false;
+        boolean dateCheck = false;
+        boolean heightCheck = false;
+        boolean emailCheck = false;
+        boolean passwordCheck = false;
         // basic inputs instalised
         String fullname = NameField.getText();
         String id = IDField.getText();
@@ -383,26 +402,30 @@ public class SportingTrailForm extends javax.swing.JFrame {
             fullnameerror1.setText("Please Fill in FullName");
         } else {
             fullnameerror1.setText("");
+            fullnameCheck = true;
         }
         for (int i = 0; i < fullname.length(); i++) {
              if(Character.isDigit(fullname.charAt(i))){
                  fullnameerror1.setText("Name inculde numbers");
              }else{
                  fullnameerror1.setText("");
+                 fullnameCheck = true;
              }
         }
         
 
-        if (id.isBlank()) {
+        if (id.isBlank() || id.length() != 13) {
             IDerror.setText("Please Fill in ID");
         } else {
             IDerror.setText("");
+            idCheck = true;
         }
         for (int i = 0; i < id.length(); i++) {
              if(!Character.isDigit(id.charAt(i))){
                  IDerror.setText("ID inncorrect");
              }else{
                  IDerror.setText("");
+                 idCheck = true;
              }
         }
         
@@ -411,10 +434,14 @@ public class SportingTrailForm extends javax.swing.JFrame {
         
 
         if (date.isBlank()) {
-            DOBerror.setText("Please Fill in Date of Birthd");
+            DOBerror.setText("Please Fill in Date of Birth");
         } else {
             DOBerror.setText("");
         }
+        //String dateStr = "17-06-2004";
+//        LocalDate date = LocalDate.parse(dateStr, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+//        
+//        System.out.println(date);
 
         
         
@@ -423,6 +450,13 @@ public class SportingTrailForm extends javax.swing.JFrame {
             Heighterror.setText("Please Fill in Height");
         } else {
             Heighterror.setText("");
+        }for (int i = 0; i < height.length(); i++) {
+             if(!Character.isDigit(height.charAt(i))){
+                 Heighterror.setText("Enter Valid Hight");
+             }else{
+                 Heighterror.setText("");
+                 heightCheck = true;
+             }
         }
         
         
@@ -431,9 +465,13 @@ public class SportingTrailForm extends javax.swing.JFrame {
             Emailerror.setText("Please Fill in Email");
         } else {
             Emailerror.setText("");
+            emailCheck = true;
         }
         if(!(email.contains("@") && email.contains(".com"))){
             Emailerror.setText("Please enter valid email address");
+        }else{
+            Emailerror.setText("");
+            emailCheck = true;
         }
         
         
@@ -442,6 +480,28 @@ public class SportingTrailForm extends javax.swing.JFrame {
             Passworderror.setText("Please Fill in Password");
         } else {
             Passworderror.setText("");
+            passwordCheck = true;
+        }
+        int letterCount = 0;
+        int numberCount = 0;
+        for (int i = 0; i <= password.length(); i++) {
+            char currentChar = password.charAt(i);
+            
+            if(Character.isDigit(currentChar)){
+                numberCount ++;
+            }else if(Character.isLetter(currentChar)){
+                letterCount++;
+            }else{
+                Passworderror.setText("Password WEAK");
+            }
+            
+            
+        }
+        if(letterCount == 5 && numberCount == 4){
+            Passworderror.setText("");
+            passwordCheck = true;
+        }else{
+            Passworderror.setText("Password WEAK");
         }
         
         
@@ -516,6 +576,7 @@ public class SportingTrailForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
