@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
  */
 public class backend {
 
-    public String checkDate(String date) {
+    public String checkDate(String date, boolean check) {
 
         String outputStr = "";
         LocalDate today = LocalDate.now();
@@ -24,87 +24,116 @@ public class backend {
 
         if (minDate.isBefore(DOB)) {
             outputStr = "TOO YOUNG";
+            check = false;
         } else if (DOB.isBefore(maxDate)) {
             outputStr = "TOO OLD";
+            check = false;
         } else {
             outputStr = "";
+            check = true;
         }
 
         return outputStr;
     }
-    
-    public boolean checkBlank(String check) {
-        
-        if (check.isBlank()) {
+
+    public boolean checkAge(String date) {
+        String outputStr = "";
+        LocalDate today = LocalDate.now();
+        LocalDate minDate = today.plusYears(-16);
+
+        LocalDate DOB = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+
+        if (DOB.isBefore(minDate)) {
             return true;
         } else {
             return false;
         }
-      
+
     }
-    
-    public String checkLetters(String id){
-        
+
+    public String checkBlank(String check, boolean isBlank) {
+
+        if (check.isBlank()) {
+            isBlank = false;
+            return "Please fill in";
+        } else {
+            isBlank = true;
+            return "";
+        }
+
+    }
+
+    public String checkLetters(String id, boolean check) {
+
         String output = "";
         for (int i = 0; i < id.length(); i++) {
-             if(!Character.isDigit(id.charAt(i))){
-                 output = "ID inncorrect";
-             }else{
-                 output = "";
-             }
+            if (!Character.isDigit(id.charAt(i))) {
+                output = "ID inncorrect";
+                check = false;
+            } else {
+                output = "";
+                check = true;
+            }
         }
         return output;
     }
-    
-    public String checkNumbers(String fullname){
-        
+
+    public String checkNumbers(String fullname, boolean check) {
+
         String output = "";
-        
+
         for (int i = 0; i < fullname.length(); i++) {
-             if(Character.isDigit(fullname.charAt(i))){
-                 output = "Name inculde numbers";
-             }else{
-                 output = "";
-             }
+            if (Character.isDigit(fullname.charAt(i))) {
+                output = "Name inculde numbers";
+                check = false;
+            } else {
+                output = "";
+                check = true;
+            }
         }
-       return output; 
+        return output;
     }
-    
-    public String checkPassword(String password){
+
+    public String checkPassword(String password, boolean check) {
         String output = "";
         int letterCount = 0;
         int numberCount = 0;
-        for (int i = 0; i <= password.length(); i++) {
+        for (int i = 0; i <= password.length() - 1; i++) {
             char currentChar = password.charAt(i);
-            
-            if(Character.isDigit(currentChar)){
-                numberCount ++;
-            }else if(Character.isLetter(currentChar)){
+
+            if (Character.isDigit(currentChar)) {
+                numberCount++;
+            } else if (Character.isLetter(currentChar)) {
                 letterCount++;
-            }else{
+            } else {
                 output = "Password is Weak";
+                check = false;
+                break;
             }
-            
-            
+
         }
-        if(letterCount == 5 && numberCount == 4){
+        if (letterCount == 5 && numberCount == 4) {
             output = "";
-        }else{
+            check = true;
+        } else {
             output = "Password is Weak";
+            check = false;
         }
-        
-       return output; 
+
+        return output;
     }
-    
-    public String checkEmail(String email){
+
+    public String checkEmail(String email, boolean check) {
         String output = "";
-        if(!(email.contains("@") && email.contains(".com"))){
+        if (!(email.contains("@") && email.contains(".com"))) {
             output = "Please enter valid email address";
-        }else{
+            check = false;
+        } else {
             output = "";
+            check = true;
         }
-        
-       return output;
+
+        return output;
     }
 }
 
